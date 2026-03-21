@@ -1,6 +1,3 @@
-// ========================================
-// Инициализация при загрузке
-// ========================================
 document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initNavigation();
@@ -12,9 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initDownloadLinks();
 });
 
-// ========================================
 // Эффект печатной машинки
-// ========================================
 function initTypingEffect() {
     const typingElement = document.querySelector('.typing-text');
     const phrases = [
@@ -58,9 +53,7 @@ function initTypingEffect() {
     type();
 }
 
-// ========================================
 // Навигация
-// ========================================
 function initNavigation() {
     const navbar = document.querySelector('.navbar');
     const hamburger = document.getElementById('hamburger');
@@ -132,9 +125,7 @@ function updateActiveNavLink() {
     });
 }
 
-// ========================================
 // Анимации при скролле
-// ========================================
 function initScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -169,9 +160,7 @@ function initScrollAnimations() {
     });
 }
 
-// ========================================
 // Анимация полосок навыков
-// ========================================
 function initSkillBars() {
     const skillBars = document.querySelectorAll('.skill-progress');
 
@@ -189,9 +178,7 @@ function initSkillBars() {
     });
 }
 
-// ========================================
 // Счётчик чисел
-// ========================================
 function initCounter() {
     const counters = document.querySelectorAll('.stat-number');
 
@@ -227,9 +214,7 @@ function animateCounter(element, target) {
     }, stepTime);
 }
 
-// ========================================
 // Форма контактов
-// ========================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
 
@@ -330,9 +315,7 @@ function showNotification(message, type) {
     }, 3000);
 }
 
-// ========================================
 // Параллакс эффект для фона
-// ========================================
 function initParallax() {
     const floatingCode = document.querySelector('.floating-code');
 
@@ -344,9 +327,7 @@ function initParallax() {
     }
 }
 
-// ========================================
 // Дополнительные эффекты
-// ========================================
 
 // Эффект "печатания" для заголовков
 function typeWriter(element, text, speed = 100) {
@@ -444,9 +425,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ========================================
 // Обработка изменения размера окна
-// ========================================
 let resizeTimer;
 
 window.addEventListener('resize', () => {
@@ -457,9 +436,7 @@ window.addEventListener('resize', () => {
     }, 250);
 });
 
-// ========================================
 // Консольное приветствие для разработчиков
-// ========================================
 console.log(`
 %c
 ╔═══════════════════════════════════════════╗
@@ -469,9 +446,7 @@ console.log(`
 ╚═══════════════════════════════════════════╝
 `, 'color: #6366f1; font-family: monospace; font-size: 14px;');
 
-// ========================================
 // Lazy Loading для изображений (если будут добавлены)
-// ========================================
 if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -489,9 +464,7 @@ if ('IntersectionObserver' in window) {
     });
 }
 
-// ========================================
 // Поддержка свайпов для мобильных устройств
-// ========================================
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -521,9 +494,7 @@ function handleSwipe() {
     }
 }
 
-// ========================================
 // Обработка ссылок на скачивание
-// ========================================
 function initDownloadLinks() {
     const downloadLinks = document.querySelectorAll('.download-link');
 
