@@ -1,7 +1,6 @@
 hysteria2://239471f8-4608-438e-9d2e-a6a950d98ad4@31.59.104.139:8443?sni=bing.com&insecure=1#🇱🇻 BlizzFulVPN (Latvia)
-vless://8a192afa-6ae2-4525-dd83-b99150e709a6@3.126.92.224:443?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-201
-vless://e9adbac6-90e1-4c1f-ad17-46226d45a262@85.133.221.48:5001?security=&encryption=none&headerType=none&type=tcp#canfingV2rayNG-319
-vless://06c9fd44-3a53-4c2a-877c-01df0d32e4ee@arvancloud.ir:80?type=ws&encryption=none&path=%40TunizoNET&host=ri.amirenzohost.ir&security=none#LoopLine_Ir-27
+hysteria2://fake@0.0.0.0:0?insecure=1#ПЕРЕД ЗАПУСКОМ ПОСЛЕ НАЗВАНИЯ
+hysteria2://fake@0.0.0.0:0?insecure=1#Тык 🔄ПЕРЕЗАГРУЗКА ТАК СТАБИЛЬНЕЕ🌐
 hysteria2://fake@0.0.0.0:0?insecure=1#ИЗ ЗА МАССОВЫХ БЛОКИРОВОК 
 hysteria2://fake@0.0.0.0:0?insecure=1#С 5 ПО 9 МАЯ  hysteria2://fake@0.0.0.0:0?insecure=1#ТЕХ.НЕПОЛАДКИ ПОКА 
 hysteria2://fake@0.0.0.0:0?insecure=1#ВСЕ СЕРВЕРА УБРАЛИ Т.К НЕ РАБОТАЮТ 
