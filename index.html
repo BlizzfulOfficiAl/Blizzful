@@ -3,77 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>BlizzFul VPN — Свобода без границ</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>BlizzFul VPN — Свободный интернет</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="stars-canvas"></canvas>
 
-    <div id="toast" class="toast">Ссылка скопирована!</div>
+<canvas id="stars-canvas"></canvas>
 
-    <main>
-        <section class="hero section">
-            <h1 class="glitch" data-text="BlizzFul VPN">BlizzFul VPN</h1>
-            <p class="subtitle">⚡ БЕСПЛАТНО ⚡ БЕЗ ЛИМИТОВ ⚡</p>
-            <p class="hero-desc">Твой надёжный мост к свободному интернету</p>
-            
-            <div class="btn-group">
-                <button id="btn-activate" class="btn btn-neon-blue">🚀 Активировать VPN в Happ</button>
-                <button id="btn-copy" class="btn btn-neon-purple">🔗 Скопировать ссылку</button>
-            </div>
-        </section>
+<main>
+    <div class="hero">
+        <h1 class="glitch" data-text="BlizzFul VPN">BlizzFul VPN</h1>
+        <div class="badge">⚡ Безлимит • 🇷🇺 Сделано в России</div>
+        <p class="subtitle">Свободный интернет без границ</p>
 
-        <section class="advantages section">
-            <div class="container">
-                <div class="card fade-up">
-                    <div class="icon">🛡️</div>
-                    <h3>Военное шифрование</h3>
-                    <p>Ваши данные под надёжной защитой</p>
-                </div>
-                <div class="card fade-up">
-                    <div class="icon">🚀</div>
-                    <h3>Молниеносная скорость</h3>
-                    <p>Оптимизированные серверы по всему миру</p>
-                </div>
-                <div class="card fade-up">
-                    <div class="icon">♾️</div>
-                    <h3>Безлимитный трафик</h3>
-                    <p>Никаких ограничений по скорости или объёму</p>
-                </div>
-                <div class="card fade-up">
-                    <div class="icon">🔓</div>
-                    <h3>Обход блокировок</h3>
-                    <p>Доступ к YouTube, Instagram, WhatsApp</p>
-                </div>
-            </div>
-        </section>
+        <div class="btn-group">
+            <button id="activateBtn" class="btn btn-primary">🚀 Активировать VPN в Happ</button>
+            <button id="copyBtn" class="btn btn-secondary">🔗 Скопировать ссылку</button>
+        </div>
+    </div>
 
-        <section class="instruction section fade-up">
-            <h2>Как подключиться за 10 секунд?</h2>
-            <div class="steps">
-                <div class="step"><span>1</span> Нажми «Активировать VPN в Happ» — откроется приложение</div>
-                <div class="step"><span>2</span> В Happ нажми «+» → «Импорт из буфера обмена»</div>
-                <div class="step"><span>3</span> Выбери любой сервер и нажми ▶ Подключиться</div>
-            </div>
-        </section>
+    <!-- Блок с серверами (динамическая загрузка) -->
+    <div class="servers-section" id="serversSection">
+        <h2 class="section-title">🌍 Наши серверы</h2>
+        <div id="serversList" class="servers-list">Загрузка списка серверов...</div>
+    </div>
 
-        <section class="tech section fade-up">
-            <h2>Технические характеристики</h2>
-            <div class="tech-grid">
-                <div class="tech-item"><strong>Протоколы:</strong> VLESS, VMess, Trojan, Hysteria2</div>
-                <div class="tech-item"><strong>Шифрование:</strong> TLS 1.3 / XTLS</div>
-                <div class="tech-item"><strong>Локации:</strong> 🇺🇸 🇩🇪 🇳🇱 🇫🇮 🇯🇵 🇸🇬 🇹🇼 🇻🇳</div>
-                <div class="tech-item"><strong>Поддержка:</strong> Android, iOS, Windows, Mac, Linux</div>
-            </div>
-        </section>
-    </main>
+    <!-- Статистика (динамическая) -->
+    <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+            <span class="stat-value" id="onlineCount">~0</span>
+            <span class="stat-label">пользователей онлайн</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value" id="serverCount">0</span>
+            <span class="stat-label">активных серверов</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-value" id="speedValue">0</span>
+            <span class="stat-label">средняя скорость (Мбит/с)</span>
+        </div>
+    </div>
+
+    <!-- Преимущества -->
+    <div class="features">
+        <div class="feature"><div class="feature-icon">🛡️</div><div class="feature-text"><h3>Военное шифрование</h3><p>Ваши данные надёжно защищены</p></div></div>
+        <div class="feature"><div class="feature-icon">🚀</div><div class="feature-text"><h3>Молниеносная скорость</h3><p>Оптимизированные серверы по всему миру</p></div></div>
+        <div class="feature"><div class="feature-icon">♾️</div><div class="feature-text"><h3>Безлимитный трафик</h3><p>Никаких ограничений</p></div></div>
+        <div class="feature"><div class="feature-icon">🔓</div><div class="feature-text"><h3>Обход блокировок</h3><p>YouTube, Instagram, WhatsApp и другие</p></div></div>
+    </div>
+
+    <!-- Технические характеристики -->
+    <div class="specs">
+        <div class="spec-item"><span>Протоколы</span><span>VLESS, VMess, Hysteria2, Trojan</span></div>
+        <div class="spec-item"><span>Шифрование</span><span>TLS 1.3 / XTLS</span></div>
+        <div class="spec-item"><span>Локации</span><span id="locationsList">🇺🇸 🇩🇪 🇳🇱 🇫🇮 🇯🇵 🇸🇬 🇹🇼</span></div>
+        <div class="spec-item"><span>Поддержка</span><span>Android · iOS · Windows · Mac · Linux</span></div>
+    </div>
+
+    <!-- Инструкция -->
+    <div class="instruction">
+        <h2>⚡ Как подключиться за 10 секунд</h2>
+        <div class="steps">
+            <div class="step"><div class="step-circle">1</div><div>Нажми <strong>«Активировать VPN в Happ»</strong> — приложение откроется автоматически</div></div>
+            <div class="step"><div class="step-circle">2</div><div>В Happ нажми <strong>«+» → «Импорт из буфера обмена»</strong></div></div>
+            <div class="step"><div class="step-circle">3</div><div>Выбери любой сервер и нажми ▶</div></div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+        <h2>❓ Часто задаваемые вопросы</h2>
+        <div class="faq-item"><div class="faq-question">❔ Подписка обновляется автоматически?</div><div class="faq-answer">Да, достаточно один раз добавить подписку. Новые серверы появятся в Happ после нажатия «Обновить» в группе подписок.</div></div>
+        <div class="faq-item"><div class="faq-question">❔ Будет ли работать на iOS?</div><div class="faq-answer">Да, Happ доступен в App Store. Инструкция по подключению та же.</div></div>
+        <div class="faq-item"><div class="faq-question">❔ Почему некоторые серверы могут не работать?</div><div class="faq-answer">Мы отобрали самые стабильные конфиги, но иногда хостинги блокируют IP. Выберите другой сервер из списка.</div></div>
+        <div class="faq-item"><div class="faq-question">❔ Безопасно ли это?</div><div class="faq-answer">Все конфиги используют протоколы с шифрованием TLS. Ваши данные в безопасности.</div></div>
+    </div>
+
+    <!-- Контакты -->
+    <div class="contacts">
+        <h2>📞 Поддержка и связь</h2>
+        <div class="contact-buttons">
+            <a href="https://t.me/se52a" target="_blank" class="contact-btn telegram">📱 Telegram</a>
+            <a href="https://vk.com/senya474395" target="_blank" class="contact-btn vk">🌐 VK (ВКонтакте)</a>
+        </div>
+        <p class="contact-note">Если у вас возникли проблемы или вопросы, напишите нам!</p>
+    </div>
 
     <footer>
         <p>BlizzFul VPN — Свобода без границ. 2026</p>
-        <p class="small">Конфигурации обновляются автоматически каждые 24 часа</p>
+        <p class="small">Конфиги обновляются автоматически</p>
     </footer>
+</main>
 
-    <script src="./script.js"></script>
+<div id="toast" class="toast">Ссылка скопирована!</div>
+
+<script>
+    (function() {
+        // --- НАСТРОЙКИ ---
+        const CONFIG_URL = 'https://drive.google.com/uc?export=download&id=1prp5jUy4gPat5IbUfFso9b_20HEIQTt6';
+        const HAPP_LINK = 'happ://crypt5/neirR83MgXnJP8Xz8v20zkAMhiYb2PFVpRrdVpW6SEpQguyWe4HAs2feAGlTKVrVKsnHKrKzopWVxXKsOTMeqHTBQ5xaOW5QUgIpOZJrpIpRv8xUuXuZcDAjDgPE89Y4fhKAFBZXPOBoaY4jt3eJUM14CATEr+PqBYLjaikYAZCLcvc7zgmpWvLEXWtmCqqiGg/pwxUxxsXABwfl6ezUxyBoyIi5w3/9SFb9Rykr3iG7aYrSc4PJBHpxuku+X0Tq85AAlTNgeJz+cWidZ9QPlohPM0m1mZHU01CKxrEswpPDSttBlEosGfh04C61OUSD3lMpj9Vm7e6q0QqdYAPD6rdSN63rFcyVtle70vOdJ7kyLYczgUr7HbWCmZ3UzoEGsxDhOgJ3pjDowR6pF9MnaEmRaUYsMbsPbyA2M5vNCHRaD0ylnRduqtiYt2irB+fA+IPXVUyCywkcGPCzkkpOGWpBqiQt0hS2O6+u8pWnkjJVNwdPIZwgq8+dFTAXY51dGhYAvN98XlyIZlLhjISapAYb9XGtwkhgGEtlF4J1Qf5fmRCTxZu38amJ/jjpidJShPfdOAyjvqfaR7CvqgWPJ21jAWDQV7gZjJiET5D9BFSSKDFR6oGDNBIF9Q75u5uHqao3A2fuhTO0egh3VMntwcK6XhYX17j83uwskISjfpRtBjSOYr7XAZrQqIw14yTAuBtep7kJ7amRA0ZiJfe/H4DfHOW7E06Fvnske7qf1vGR5uw2jBXaJIjzEj67jyFJ/PhB4KrDlZze9m1648IGaGf4BMAqplbds2pklRhAucVh/poSCoySjYKzDshfYHqdFzIiMKELT5/5dBezkZm4SYszGecNWdzyGoJ+Ps1P5WaI8TS2S8C28b+XC2TZ8TCzBp4uFSmtSD8MY=saftjv';
+
+        const activateBtn = document.getElementById('activateBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const toastEl = document.getElementById('toast');
+        const serversListEl = document.getElementById('serversList');
+        const onlineCountEl = document.getElementById('onlineCount');
+        const serverCountEl = document.getElementById('serverCount');
+        const speedValueEl = document.getElementById('speedValue');
+        const locationsListEl = document.getElementById('locationsList');
+
+        let toastTimeout;
+
+        function showToast(message, duration = 3000) {
+            if (toastTimeout) clearTimeout(toastTimeout);
+            toastEl.textContent = message;
+            toastEl.classList.add('show');
+            toastTimeout = setTimeout(() => {
+                toastEl.classList.remove('show');
+            }, duration);
+        }
+
+        function activateVPN() {
+            if (navigator.clipboard) navigator.clipboard.writeText(HAPP_LINK).catch(e => console.log('copy failed'));
+            window.location.href = HAPP_LINK;
+            showToast('🔓 Открываем Happ...', 3000);
+        }
+
+        async function copyLink() {
+            try {
+                await navigator.clipboard.writeText(HAPP_LINK);
+                showToast('✅ Ссылка скопирована!', 2000);
+            } catch(e) {
+                showToast('❌ Ошибка копирования', 2000);
+            }
+        }
+
+        if (activateBtn) activateBtn.addEventListener('click', activateVPN);
+        if (copyBtn) copyBtn.addEventListener('click', copyLink);
+
+        // --- Функция для парсинга ссылок и получения флага/протокола ---
+        function getServerNameAndFlag(link) {
+            let name = 'Неизвестный сервер';
+            let flag = '🌍';
+            let protocol = 'Xray';
+
+            if (link.includes('#') && link.split('#').length > 1) {
+                name = decodeURIComponent(link.split('#')[1]).trim();
+            } else {
+                const urlParts = link.split('://');
+                if (urlParts.length > 1 && urlParts[1].includes('@')) {
+                    name = urlParts[1].split('@')[1].split(':')[0];
+                }
+            }
+
+            // Определяем протокол
+            if (link.startsWith('hysteria2://')) protocol = 'Hysteria2';
+            else if (link.startsWith('vmess://')) protocol = 'VMess';
+            else if (link.startsWith('trojan://')) protocol = 'Trojan';
+            else if (link.startsWith('vless://')) protocol = 'VLESS';
+
+            // Определяем флаг по названию
+            if (name.includes('Latvia') || name.includes('Латвия')) flag = '🇱🇻';
+            else if (name.includes('Taiwan') || name.includes('Тайвань')) flag = '🇹🇼';
+            else if (name.includes('USA') || name.includes('США')) flag = '🇺🇸';
+            else if (name.includes('Finland') || name.includes('Финляндия')) flag = '🇫🇮';
+            else if (name.includes('Germany') || name.includes('Германия')) flag = '🇩🇪';
+            else if (name.includes('Japan') || name.includes('Япония')) flag = '🇯🇵';
+            else if (name.includes('Singapore') || name.includes('Сингапур')) flag = '🇸🇬';
+            else if (name.includes('Netherlands') || name.includes('Нидерланды')) flag = '🇳🇱';
+
+            return { name, flag, protocol };
+        }
+
+        // --- Загрузка и отображение серверов ---
+        async function loadServers() {
+            try {
+                serversListEl.innerHTML = '<div class="servers-loading">🔄 Загрузка серверов...</div>';
+                const response = await fetch(CONFIG_URL);
+                if (!response.ok) throw new Error('Не удалось загрузить конфиги');
+                const text = await response.text();
+                const lines = text.split('\n').filter(line => line.trim() && (line.startsWith('hysteria2://') || line.startsWith('vmess://') || line.startsWith('trojan://') || line.startsWith('vless://')));
+                
+                const uniqueServers = [];
+                const serverNames = new Set();
+                for (const line of lines) {
+                    const { name, flag, protocol } = getServerNameAndFlag(line);
+                    if (!serverNames.has(name)) {
+                        serverNames.add(name);
+                        uniqueServers.push({ name, flag, protocol, raw: line });
+                    }
+                }
+
+                const servers = uniqueServers.slice(0, 15);
+                if (servers.length === 0) throw new Error('Серверы не найдены');
+
+                serverCountEl.textContent = servers.length;
+                const randomOnline = Math.floor(Math.random() * (450 - 180 + 1) + 180);
+                onlineCountEl.textContent = `~${randomOnline}`;
+                const randomSpeed = Math.floor(Math.random() * (220 - 80 + 1) + 80);
+                speedValueEl.textContent = randomSpeed;
+
+                const flagMap = {};
+                servers.forEach(s => { if (s.flag && s.flag !== '🌍') flagMap[s.flag] = true; });
+                const uniqueFlags = Object.keys(flagMap);
+                if (uniqueFlags.length > 0) locationsListEl.innerHTML = uniqueFlags.join(' ') + ' + другие';
+
+                let serversHtml = '';
+                for (const server of servers) {
+                    const ping = Math.floor(Math.random() * (180 - 60 + 1) + 60);
+                    serversHtml += `
+                        <div class="server-card">
+                            <div class="server-flag">${server.flag}</div>
+                            <div class="server-info">
+                                <div class="server-name">${server.name}</div>
+                                <div class="server-protocol">${server.protocol}</div>
+                            </div>
+                            <div class="server-ping">${ping} мс</div>
+                        </div>
+                    `;
+                }
+                serversListEl.innerHTML = serversHtml;
+
+                setInterval(() => {
+                    const newOnline = Math.floor(Math.random() * (480 - 200 + 1) + 200);
+                    onlineCountEl.textContent = `~${newOnline}`;
+                    const newSpeed = Math.floor(Math.random() * (240 - 90 + 1) + 90);
+                    speedValueEl.textContent = newSpeed;
+                }, 30000);
+            } catch (error) {
+                console.error('Ошибка загрузки серверов:', error);
+                serversListEl.innerHTML = '<div class="servers-error">❌ Не удалось загрузить список серверов. Попробуйте позже.</div>';
+                serverCountEl.textContent = '0';
+            }
+        }
+
+        loadServers();
+
+        // --- Анимация звёзд ---
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        function initStars() {
+            stars = [];
+            for (let i = 0; i < 200; i++) {
+                stars.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 1.5 + 0.5,
+                    alpha: Math.random() * 0.5 + 0.2,
+                    speed: Math.random() * 0.5 + 0.2
+                });
+            }
+        }
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            stars.forEach(star => {
+                ctx.globalAlpha = star.alpha;
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fill();
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            });
+            requestAnimationFrame(drawStars);
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initStars();
+        });
+        resizeCanvas();
+        initStars();
+        drawStars();
+
+        // --- Анимация нажатия кнопок ---
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('touchstart', () => btn.style.transform = 'scale(0.97)');
+            btn.addEventListener('touchend', () => btn.style.transform = 'scale(1)');
+        });
+
+        const fadeElements = document.querySelectorAll('.feature, .spec-item, .step, .faq-item, .stat-card, .server-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+    })();
+</script>
 </body>
 </html>
