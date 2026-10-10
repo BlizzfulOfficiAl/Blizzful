@@ -1,0 +1,23 @@
+{
+  "headline": "Моё меню",
+  "items": [
+    {
+      "title": "Zona",
+      "label": "Фильмы и сериалы",
+      "image": "https://m.zona.ms/favicon.ico",
+      "action": "link:https://m.zona.ms"
+    },
+    {
+      "title": "Lampa",
+      "label": "Онлайн-кинотеатр",
+      "image": "https://lampa.mx/favicon.ico",
+      "action": "link:https://lampa.mx"
+    },
+    {
+      "title": "YouTube",
+      "label": "Видеосервис",
+      "image": "https://www.youtube.com/favicon.ico",
+      "action": "link:https://m.youtube.com"
+    }
+  ]
+}
